@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
         //tvSec.setText("I'm second");
-
+/*
         Fragment newFragment = new MainFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.layout.first_fragment, newFragment);
+        transaction.replace(R.layout.first_fragment, newFragment);*/
 
         Fragment secoundFragment = new SecondFragment();
         FragmentTransaction transaction1 = getFragmentManager().beginTransaction();
@@ -43,6 +43,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      //   transaction.addToBackStack(null);
 
 // Commit the transaction
-        transaction.commit();
+        transaction1.commit();
     }
 }
