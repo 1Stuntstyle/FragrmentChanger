@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FragrmentChanger</string>
+    <string name="third_fragment">I am third!!!</string>
+</resources>
