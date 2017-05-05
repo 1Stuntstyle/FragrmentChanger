@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">FragrmentChanger</string>
-    <string name="third_fragment">I am third!!!</string>
+    <string name="third_fragment">Nope bro.. I am third!!!</string>
+    <string name="butotns">New 2</string>
+    <string name="bNew3">New 3</string>
 </resources>
