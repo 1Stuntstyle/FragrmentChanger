@@ -3,4 +3,8 @@
     <string name="third_fragment">Nope bro.. I am third!!!</string>
     <string name="butotns">New 2</string>
     <string name="bNew3">New 3</string>
+    <string name="name">Name</string>
+    <string name="open_second_fragment">Open second fragment</string>
+    <string name="open_third_fragment">Open third fragment</string>
+    <string name="get_name">Get name</string>
 </resources>
