@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:layout_margin="@dimen/activity_horizontal_margin">
 
-
     <EditText
         android:id="@+id/etName"
         android:layout_width="0dp"
@@ -18,7 +17,7 @@
 
     <Button
         android:id="@+id/bOpenSecondFragment"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/open_second_fragment"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -27,7 +26,7 @@
 
     <Button
         android:id="@+id/bOpenThirdFragment"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/open_third_fragment"
         app:layout_constraintLeft_toLeftOf="parent"

@@ -1,6 +1,6 @@
 package com.example.darek.fragrmentchanger;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +22,6 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container1, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.second_fragment, container1, false);
-
         Button bName = (Button) view.findViewById(R.id.bName);
         bName.setOnClickListener(this);
         etName = (EditText) view.findViewById(R.id.etName);

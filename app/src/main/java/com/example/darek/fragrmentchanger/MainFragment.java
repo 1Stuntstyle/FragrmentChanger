@@ -1,8 +1,8 @@
 package com.example.darek.fragrmentchanger;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +13,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.first_fragment, container, false);
-
         Button bOpenSecondFragment = (Button) view.findViewById(R.id.bOpenSecondFragment);
         Button bOpenThirdFragment = (Button) view.findViewById(R.id.bOpenThirdFragment);
         bOpenSecondFragment.setOnClickListener(this);
@@ -35,7 +34,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     }
 
     private void replaceFragment(Fragment fragment) {
-        FragmentTransaction transaction1 = getFragmentManager().beginTransaction();
+        FragmentTransaction transaction1 = getActivity().getSupportFragmentManager().beginTransaction();
         transaction1.replace(R.id.container, fragment);
         transaction1.addToBackStack(null);
         transaction1.commit();
