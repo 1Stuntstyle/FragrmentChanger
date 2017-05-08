@@ -26,19 +26,18 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bOpenSecondFragment:
-                Fragment thirdFragment = new ThirdFragment();
-                FragmentTransaction transaction1 = getFragmentManager().beginTransaction();
-                transaction1.replace(R.id.container, thirdFragment);
-                transaction1.addToBackStack(null);
-                transaction1.commit();
+                replaceFragment(new SecondFragment());
                 break;
             case R.id.bOpenThirdFragment:
-                Fragment secondFragment = new SecondFragment();
-                FragmentTransaction transaction2 = getFragmentManager().beginTransaction();
-                transaction2.replace(R.id.container, secondFragment);
-                transaction2.addToBackStack(null);
-                transaction2.commit();
+                replaceFragment(new ThirdFragment());
                 break;
         }
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentTransaction transaction1 = getFragmentManager().beginTransaction();
+        transaction1.replace(R.id.container, fragment);
+        transaction1.addToBackStack(null);
+        transaction1.commit();
     }
 }
