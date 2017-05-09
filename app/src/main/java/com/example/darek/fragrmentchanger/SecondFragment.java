@@ -1,12 +1,14 @@
 package com.example.darek.fragrmentchanger;
 
-import android.support.v4.app.Fragment;
+import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -14,20 +16,24 @@ import android.widget.TextView;
  */
 public class SecondFragment extends Fragment implements View.OnClickListener {
 
-    private DataAccess dAccess;
-    private EditText etName;
     private TextView tvName;
+    private DataAccess dataAccess;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        dataAccess = (DataAccess) getActivity();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container1, Bundle savedInstanceState) {
 
+        setDisplayHomeAsUpEnabled(true);
+
         View view = inflater.inflate(R.layout.second_fragment, container1, false);
         Button bName = (Button) view.findViewById(R.id.bName);
         bName.setOnClickListener(this);
-        etName = (EditText) view.findViewById(R.id.etName);
         tvName = (TextView) view.findViewById(R.id.tvSecond);
-
-        dAccess = new SetData();
 
         return view;
     }
@@ -37,7 +43,15 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
 
         switch (v.getId()) {
             case R.id.bName:
-                tvName.setText(dAccess.sendData(etName));
+                tvName.setText(dataAccess.getData());
+        }
+    }
+
+    private void setDisplayHomeAsUpEnabled(boolean enabled) {
+        AppCompatActivity appCompatActivity = (AppCompatActivity) getActivity();
+        ActionBar actionBar = appCompatActivity.getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(enabled);
         }
     }
 }
